@@ -8,3 +8,10 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=jurishand
+  api_jurishand:
+    build: .
+    ports:
+      - '3001:3001'
+    restart: always
+    depends_on:
+      - db_jurishand
