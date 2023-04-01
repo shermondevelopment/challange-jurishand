@@ -22,4 +22,14 @@ describe('Creating article', () => {
     expect(response.statusCode).toBe(422)
     expect(response.body).toEqual({ error: '"author" is required' })
   })
+  it("should get an error if the user doesn't provide a content", async () => {
+    const response = await supertest(app).post('/add').send({
+      title: 'any_title',
+      author: 'any_author',
+      date: new Date(),
+      category: 'any_category'
+    })
+    expect(response.statusCode).toBe(422)
+    expect(response.body).toEqual({ error: '"content" is required' })
+  })
 })
