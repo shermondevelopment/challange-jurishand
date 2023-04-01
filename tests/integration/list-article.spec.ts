@@ -7,4 +7,9 @@ describe('List article', () => {
     expect(response.statusCode).toBe(200)
     expect(response.body).not.toBeNull()
   })
+  it('should get all articles filtered by category', async () => {
+    const response = await supertest(app).get('/').query({ category: 'civil' })
+    expect(response.statusCode).toBe(200)
+    expect(response.body).not.toBeNull()
+  })
 })
