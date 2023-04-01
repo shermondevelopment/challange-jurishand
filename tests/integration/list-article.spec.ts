@@ -12,4 +12,11 @@ describe('List article', () => {
     expect(response.statusCode).toBe(200)
     expect(response.body).not.toBeNull()
   })
+  it('should get all articles filtered by and content and title key words', async () => {
+    const response = await supertest(app)
+      .get('/')
+      .query({ category: 'codigo c' })
+    expect(response.statusCode).toBe(200)
+    expect(response.body).not.toBeNull()
+  })
 })
