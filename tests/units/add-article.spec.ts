@@ -43,4 +43,16 @@ describe('Create article', () => {
     })
     expect(articleFind[0]).toHaveProperty('id')
   })
+  it('should call the execute method with the correct parameters', async () => {
+    const article = {
+      title: 'any_title',
+      author: 'any_author',
+      category: 'any_category',
+      content: 'any_content',
+      date: new Date()
+    }
+    const spy = jest.spyOn(addArticleUseCase, 'execute')
+    addArticleUseCase.execute(article)
+    expect(spy).toHaveBeenCalledWith(article)
+  })
 })
