@@ -4,6 +4,6 @@ import AddArticleUseCase from './AddArticleUseCase'
 
 const articleRepository = new ArticleRepository()
 const articleUseCase = new AddArticleUseCase(articleRepository)
-const articleController = new AddArticleController(articleUseCase)
+const addArticleController = new AddArticleController(articleUseCase)
 
-export default articleController
+export default addArticleController
