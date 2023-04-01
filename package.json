@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsnd --respawn --transpile-only app/server.ts",
-    "test": "dotenv -e .env.dev jest",
+    "test": "dotenv -e .env.dev jest --no-cache --runInBand",
     "up": "docker-compose up -d",
     "prisma:migrate": "prisma migrate dev",
     "start": "npm run prisma:migrate && prisma db seed && node dist/app/server.js"
