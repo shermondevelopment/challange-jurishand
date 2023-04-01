@@ -1,0 +1,126 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "JurisHand Documentation",
+    "description": "This api was developed based on the jurishand challenge",
+    "contact": {
+      "email": "victor804.gt@gmail.com",
+      "fone": "88 981225040"
+    }
+  },
+  "paths": {
+    "/add": {
+      "post": {
+        "tags": ["Article"],
+        "summary": "Create a article",
+        "description": "Create a new article",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "author": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "content": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "date": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "category": {
+                    "type": "string",
+                    "required": true
+                  }
+                },
+                "example": {
+                  "title": "Código Civil",
+                  "author": "Fernando Henrique Cardoso",
+                  "content": "Lei de Introdução ...",
+                  "date": "2023-01-10T17:00:00Z",
+                  "category": "Civil"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "body": "No Content",
+            "description": "the article was created"
+          },
+          "400": {
+            "description": "Required fields were not provided",
+            "error": "Required fields were not provided"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": ["Article"],
+        "summary": "List articles",
+        "description": "List all articles by data and filter by content and title",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "category name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "will do a search in title and content with the keyword",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "author": {
+                        "type": "string"
+                      },
+                      "content": {
+                        "type": "string"
+                      },
+                      "date": {
+                        "type": "string"
+                      },
+                      "category": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
