@@ -53,4 +53,14 @@ describe('Creating article', () => {
     expect(response.statusCode).toBe(422)
     expect(response.body).toEqual({ error: 'please enter a valid date!' })
   })
+  it('should receive a status code 204 if the data is correct', async () => {
+    const response = await supertest(app).post('/add').send({
+      title: 'any_title',
+      author: 'any_author',
+      content: 'any_content',
+      date: new Date(),
+      category: 'any_category'
+    })
+    expect(response.statusCode).toBe(204)
+  })
 })

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsnd --respawn --transpile-only app/server.ts",
-    "test": "jest",
+    "test": "dotenv -e .env.dev jest",
     "up": "docker-compose up -d",
     "prisma:migrate": "prisma migrate dev",
     "start": "npm run prisma:migrate && prisma db seed && node dist/app/server.js"
@@ -27,6 +27,7 @@
     "@types/swagger-ui-express": "^4.1.3",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
+    "dotenv-cli": "^7.1.0",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
