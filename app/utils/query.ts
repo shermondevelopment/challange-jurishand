@@ -3,7 +3,7 @@ import { IListArticleQuery } from '../modules/usecases/ListArticle/IListArticleU
 const ammountQuery = (queryParams: IListArticleQuery) => {
   let query: any = {}
   for (const param in queryParams) {
-    if (queryParams[param] && param === 'category') {
+    if (param && param === 'category') {
       query = {
         where: {
           AND: {
@@ -12,7 +12,7 @@ const ammountQuery = (queryParams: IListArticleQuery) => {
         }
       }
     }
-    if (queryParams[param] && param === 'key') {
+    if (param && param === 'key') {
       query = {
         where: {
           ...query.where,

@@ -1,7 +1,8 @@
 import { Article } from '@prisma/client'
-import { IArticleParams } from '../usecases/addArticle/IAddArticle'
+import { IListArticleQuery } from '../usecases/ListArticle/IListArticleUseCase'
+import { IArticleParams } from '../usecases/AddArticle/IAddArticle'
 
 export interface IArticleRepository {
   create(articleParams: IArticleParams): Promise<void>
-  findArticle(articleParams): Promise<Article[]>
+  findArticle(articleParams: IListArticleQuery): Promise<Article[]>
 }
