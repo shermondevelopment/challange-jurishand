@@ -17,5 +17,20 @@ authorCount = df.groupby(['author']).agg(
     quantity_author_by_article=('category', 'count')
 )
 
+
+# calculating media of words by text
+
+def count_words(content):
+    words = content.split()
+    return len(words)
+
+
+df['average_content_article'] = df['content'].apply(count_words)
+
+average = df.groupby('title')['average_content_article'].mean()
+
+# save file csv
+
 categoryCountReports.to_csv('scripts/reports/category.csv')
 authorCount.to_csv('scripts/reports/author.csv')
+average.to_csv('scripts/reports/average.csv')
