@@ -1,4 +1,4 @@
-# <p align = "center"> IN8 WEBScraper </p>
+# <p align = "center"> JurisHand Challange </p>
 
 <p align="center">
   <img src="https://jurishand.com/_next/static/media/logo-jurishand-black.7fffda40.svg" width="150"/>
@@ -75,3 +75,22 @@ http:localhost:3001/docs
 ```
   npm run test
 ````
+## 🛠️🛠️ Running scripts of reports
+
+<br />
+
+
+### First Step
+
+<p>
+  To generate the reports with the scripts you need to have installed the pyton pandas library you can get more information here <a href="https://pandas.pydata.org/docs/getting_started/install.html">pandas install</a>
+</p>
+
+<br />
+
+
+### Second Step
+
+<p>
+Then you must navigate through your terminal to the app's script folder and run the script.
+</p>
