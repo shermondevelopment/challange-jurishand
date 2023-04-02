@@ -92,5 +92,5 @@ http:localhost:3001/docs
 ### Second Step
 
 <p>
-Then you must navigate through your terminal to the app's script folder and run the script.
+Next, you must navigate through your terminal to the app's script folder and run the script. The csv files will be generated in the same reports folder.
 </p>
