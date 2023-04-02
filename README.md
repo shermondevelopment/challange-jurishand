@@ -71,3 +71,7 @@ POST /
 http:localhost:3001/docs
 ```
 
+## 🧪🧪 Running tests with jest
+```
+  npm run test
+````
